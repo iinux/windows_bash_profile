@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ $1 != "-n" ]; then
+    eval "utf tasklist -fi \\\"modules eq $1\\\""
+else
+    eval "utf tasklist -fi \\\"modules ne $1\\\""
+fi

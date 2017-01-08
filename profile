@@ -32,6 +32,9 @@ alias taskkill="utf taskkill "
 alias testnet="ping www.baidu.com -t"
 alias tftp='utf tftp '
 alias vihosts='vi /c/Windows/System32/drivers/etc/hosts '
+
+export PATH=$PATH:/etc/windows_bash_profile/bin
+
 if [ -f "/etc/windows_bash_profile/local_profile" ]
 then 
 source /etc/windows_bash_profile/local_profile
