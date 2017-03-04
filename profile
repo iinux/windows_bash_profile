@@ -8,6 +8,7 @@ alias arp='utf arp '
 alias artisan='./artisan '
 alias at="utf at "
 alias cdold='cd $OLDPWD'
+alias cncomposer='composer config repo.packagist composer https://packagist.phpcomposer.com'
 alias cp='cp -i '
 alias du1='du --max-depth=1 -h'
 alias duu='du --max-depth=0 -h'
