@@ -35,6 +35,7 @@ alias tftp='utf tftp '
 alias vihosts='vi /c/Windows/System32/drivers/etc/hosts '
 
 export PATH=$PATH:/etc/windows_bash_profile/bin
+export HISTTIMEFORMAT="%F %T  "
 
 if [ -f "/etc/windows_bash_profile/local_profile" ]
 then 
