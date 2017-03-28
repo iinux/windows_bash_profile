@@ -22,6 +22,7 @@ alias mv='mv -i '
 alias net='utf net '
 alias netsh='utf netsh '
 alias netstat='utf netstat -n '
+alias nfsadmin='utf nfsadmin ' # refer to https://technet.microsoft.com/zh-cn/library/cc732345(v=ws.11).aspx
 alias nslookup='winpty nslookup '
 alias ping='utf ping '
 alias port='utf netstat -ano | grep '
