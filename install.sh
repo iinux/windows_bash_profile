@@ -1,10 +1,5 @@
 #!/bin/sh
 
-if [ ! -f "/usr/bin/utf" ]
-then
-cp utf /usr/bin
-fi
-
 profile=`grep windows_bash_profile /etc/profile`
 if [ "$profile" = "" ]
 then
