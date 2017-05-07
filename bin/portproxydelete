@@ -1,0 +1,3 @@
+#!/bin/sh
+# netsh interface portproxy delete v4tov4 listenaddress=172.20.53.1 listenport=14941
+netsh interface portproxy delete v4tov4 listenaddress=$1 listenport=$2
