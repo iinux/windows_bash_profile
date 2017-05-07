@@ -18,6 +18,7 @@ alias ifconfig='utf ipconfig'
 alias java="utf java "
 alias javac="utf javac "
 alias killl='utf taskkill -f -pid '
+alias msg='utf msg '
 alias mv='mv -i '
 alias net='utf net '
 alias netsh='utf netsh '
