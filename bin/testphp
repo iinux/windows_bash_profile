@@ -1,13 +1,13 @@
 #!/bin/sh
 if [ "$1" == "e" ]; then
-    vi `pwd`'/testphp'
+    vi "$0"
     exit
 fi
 
 php << EOF
 <?php
 
-echo "testphp start\n";
+echo "testphp start...\n";
 
 
 EOF
