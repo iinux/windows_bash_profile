@@ -1,13 +1,7 @@
 #!/bin/sh
 if [ "$1" == "e" ]; then
-    vi "$0"
+    vi "$0.php"
     exit
 fi
 
-php << EOF
-<?php
-
-echo "testphp start...\n";
-
-
-EOF
+php "$0.php"
