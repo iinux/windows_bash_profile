@@ -7,6 +7,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 alias arp='utf arp '
 alias artisan='./artisan '
 alias at="utf at "
+alias cal="busybox cal "
 alias cdold='cd $OLDPWD'
 alias cncomposer='composer config repo.packagist composer https://packagist.phpcomposer.com'
 alias cp='cp -i '
