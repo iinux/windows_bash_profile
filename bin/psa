@@ -1,0 +1,57 @@
+#!/bin/sh
+help="
+\n
+example:  psa Name chrome.exe ParentProcessId,ProcessId\n
+\n
+Caption\n
+CommandLine\n
+CreationClassName\n
+CreationDate\n
+CSCreationClassName\n
+CSName\n
+Description\n
+ExecutablePath\n
+ExecutionState\n
+Handle\n
+HandleCount\n
+InstallDate\n
+KernelModeTime\n
+MaximumWorkingSetSize\n
+MinimumWorkingSetSize\n
+Name\n
+OSCreationClassName\n
+OSName\n
+OtherOperationCount\n
+OtherTransferCount\n
+PageFaults\n
+PageFileUsage\n
+ParentProcessId\n
+PeakPageFileUsage\n
+PeakVirtualSize\n
+PeakWorkingSetSize\n
+Priority\n
+PrivatePageCount\n
+ProcessId\n
+QuotaNonPagedPoolUsage\n
+QuotaPagedPoolUsage\n
+QuotaPeakNonPagedPoolUsage\n
+QuotaPeakPagedPoolUsage\n
+ReadOperationCount\n
+ReadTransferCount\n
+SessionId\n
+Status\n
+TerminationDate\n
+ThreadCount\n
+UserModeTime\n
+VirtualSize\n
+WindowsVersion\n
+WorkingSetSize\n
+WriteOperationCount\n
+WriteTransferCount\n
+"
+if [ $# -ne 3 ]; then
+	echo -e $help
+	exit
+fi
+
+wmic process where $1=\"$2\" get $3

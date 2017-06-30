@@ -35,6 +35,7 @@ alias schtasks="utf schtasks "
 alias tskill='utf tskill '
 alias tasklist="utf tasklist "
 alias taskkill="utf taskkill "
+alias telnet="winpty telnet "
 alias testnet="ping www.baidu.com -t"
 alias tftp='utf tftp '
 alias tracert='utf tracert '
