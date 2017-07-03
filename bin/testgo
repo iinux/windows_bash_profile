@@ -1,0 +1,21 @@
+#!/bin/sh
+if [ "$1" == "e" ]; then
+    vi "$0.go"
+    exit
+fi
+
+if [ ! -e $0.go ]; then
+	vi "$0.go"
+	exit
+fi
+
+source_file=`stat -c %Y $0.go`
+if [ -e $0.exe ]; then
+	exe_file=`stat -c %Y $0.exe`
+else
+	exe_file=0
+fi
+if [ $source_file -gt $exe_file ]; then
+	go build $0.go
+fi
+$0.exe
