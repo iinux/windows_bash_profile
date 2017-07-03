@@ -15,7 +15,17 @@ if [ -e $0.exe ]; then
 else
 	exe_file=0
 fi
+
+build_result=0
 if [ $source_file -gt $exe_file ]; then
+	echo -e "\033[33m building \033[0m"
 	go build $0.go
+	build_result=$?
 fi
-$0.exe
+
+if [ $build_result == 0 ]; then
+	echo -e "\033[32m build success \033[0m"
+	$0.exe
+else
+	echo -e "\033[31m build fail \033[0m"
+fi
