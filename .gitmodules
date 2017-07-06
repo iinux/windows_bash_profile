@@ -1,0 +1,3 @@
+[submodule "small_and_useful/hosts"]
+	path = small_and_useful/hosts
+	url = https://github.com/racaljk/hosts.git
