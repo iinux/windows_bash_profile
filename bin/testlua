@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ "$1" == "e" ]; then
+    vi "$0.lua"
+    exit
+fi
+
+if [ ! -e $0.lua ]; then
+	vi "$0.lua"
+	exit
+fi
+
+lua $0.lua
