@@ -1,0 +1,3 @@
+[submodule "small_and_useful/google-hosts"]
+	path = small_and_useful/google-hosts
+	url = https://github.com/fengixng/google-hosts.git
