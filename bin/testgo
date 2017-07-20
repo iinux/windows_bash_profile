@@ -5,27 +5,28 @@ if [ "$1" == "e" ]; then
 fi
 
 if [ ! -e $0.go ]; then
-	vi "$0.go"
-	exit
+    vi "$0.go"
+    exit
 fi
 
 source_file=`stat -c %Y $0.go`
 if [ -e $0.exe ]; then
-	exe_file=`stat -c %Y $0.exe`
+    exe_file=`stat -c %Y $0.exe`
 else
-	exe_file=0
+    exe_file=0
 fi
 
 build_result=0
 if [ $source_file -gt $exe_file ]; then
-	echo -e "\033[33m building \033[0m"
-	go build $0.go
-	build_result=$?
+    echo -e "\033[33m building \033[0m"
+    cd $(dirname "$0")
+    go build $0.go
+    build_result=$?
 fi
 
 if [ $build_result == 0 ]; then
-	echo -e "\033[32m build success \033[0m"
-	$0.exe
+    echo -e "\033[32m build success \033[0m"
+    $0.exe
 else
-	echo -e "\033[31m build fail \033[0m"
+    echo -e "\033[31m build fail \033[0m"
 fi
