@@ -9,15 +9,8 @@ if [ ! -e $0.go ]; then
     exit
 fi
 
-source_file=`stat -c %Y $0.go`
-if [ -e $0.exe ]; then
-    exe_file=`stat -c %Y $0.exe`
-else
-    exe_file=0
-fi
-
 build_result=0
-if [ $source_file -gt $exe_file ]; then
+if [ $0.exe -ot $0.go ]; then
     echo -e "\033[33m building \033[0m"
     cd $(dirname "$0")
     go build $0.go

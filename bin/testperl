@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ "$1" == "e" ]; then
+    vi "$0.pl"
+    exit
+fi
+
+if [ ! -e $0.pl ]; then
+	vi "$0.pl"
+	exit
+fi
+
+perl $0.pl
