@@ -16,7 +16,8 @@ alias duu='du --max-depth=0 -h'
 alias ftp='winpty ftp'
 alias gitci="git pull;echo -e \"\033[47;31m YOU MAY BE NEED GIT PUSH \033[0m\";git ci -m "
 alias grep='grep --color '
-alias ifconfig='utf ipconfig'
+alias ifconfig-a='utf ipconfig'
+alias ifconfig='utf ipconfig | grep IPv4 -B 4 -A 2'
 alias java="utf java "
 alias javac='utf javac -encoding utf8 '
 alias killl='utf taskkill -f -pid '
