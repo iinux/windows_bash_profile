@@ -1,18 +1,37 @@
 #! /bin/sh
-date
 echo 'monitor start ...'
 process_name='notepad'
+previous_cpu=0
+sleep_time=5
+cpu_threshold=0
+
+start_program(){
+    date=`date`
+    #/d/ZKTime5.0/Att.exe &
+    $process_name &
+    echo "$date start $process_name ok" >> monitor-att.log
+}
+
 while [ 1 ]; do
     date
     cpu=`wmic path Win32_PerfFormattedData_PerfProc_Process get Name,PercentProcessorTime | grep $process_name | awk '{print $2}'`
-    echo "cpu is $cpu"
-    if [[ $cpu -le 99 ]]; then
-        echo 'no'
-        utf taskkill -f -im $process_name.exe -t
-        #/d/ZKTime5.0/Att.exe &
-        $process_name &
+    if [ "$cpu" = "" ]; then
+        echo "no find process"
+        start_program
     else
-        echo 'ok'
+        echo "cpu is $cpu"
+        if [[ $cpu -ge $cpu_threshold ]]; then
+            echo 'no'
+            if [[ $previous_cpu -ge $cpu_threshold ]]; then
+                utf taskkill -f -im $process_name.exe -t
+                start_program
+            else
+                echo 'wait next'
+                previous_cpu=$cpu
+            fi
+        else
+            echo 'ok'
+        fi
     fi
-    sleep 5
+    sleep $sleep_time
 done
