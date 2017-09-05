@@ -1,0 +1,40 @@
+#! /bin/sh
+echo 'monitor start ...'
+process_name='notepad'
+cpu_load_high_times=0
+cpu_load_high_times_threshold=5
+sleep_time=5
+cpu_threshold=0
+
+start_program(){
+    date=`date`
+    #/d/ZKTime5.0/Att.exe &
+    $process_name &
+    cpu_load_high_times=0
+    echo "$date start $process_name ok" >> monitor-att.log
+}
+
+while [ 1 ]; do
+    date
+    cpu=`wmic path Win32_PerfFormattedData_PerfProc_Process get Name,PercentProcessorTime | grep $process_name | awk '{print $2}'`
+    if [ "$cpu" = "" ]; then
+        echo "no find process"
+        start_program
+    else
+        echo "cpu is $cpu"
+        if [[ $cpu -ge $cpu_threshold ]]; then
+            echo 'no'
+            cpu_load_high_times=`expr $cpu_load_high_times + 1`
+            if [[ $cpu_load_high_times -ge $cpu_load_high_times_threshold ]]; then
+                utf taskkill -f -im $process_name.exe -t
+                start_program
+            else
+                echo "cpu_load_high_times is $cpu_load_high_times wait"
+            fi
+        else
+            cpu_load_high_times=0
+            echo 'ok'
+        fi
+    fi
+    sleep $sleep_time
+done

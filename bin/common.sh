@@ -15,4 +15,15 @@ between_date(){
 }
 #between_date 20170730 20170806
 
+get_cpu(){
+    name=$1
+    cpu=`wmic path Win32_PerfFormattedData_PerfProc_Process get Name,PercentProcessorTime | grep -i $name | awk '{print $2}'`
+    echo $cpu
+}
 
+attr_cpu=`get_cpu taskmgr`
+if [ $attr_cpu -gt 0 ]; then
+    echo 'no'
+else
+    echo 'ok'
+fi
