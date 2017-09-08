@@ -13,3 +13,11 @@ end $$ #  结束定义语句
 
 delimiter ; #  先把结束符 回复为;
 call wk();
+
+BEGIN
+	#Routine body goes here...
+	set @num='1';
+	set @sql=CONCAT('select student_', @num, ' from ec_bus_lines');
+	PREPARE stmt from @sql;
+	EXECUTE stmt;
+END
