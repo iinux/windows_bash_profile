@@ -18,6 +18,7 @@ alias ga="git add "
 alias gitci="git pull;echo -e \"\033[47;31m YOU MAY BE NEED GIT PUSH \033[0m\";git ci -m "
 alias grep='grep --color '
 alias ifconfig-a='utf ipconfig'
+alias ifconfig-dns="utf ipconfig -all | grep -v fec0 | grep  'DNS 服务器\|DNS Server' -B 16 -A 2"
 alias ifconfig='utf ipconfig | grep IPv4 -B 4 -A 2'
 alias java="utf java "
 alias javac='utf javac -encoding utf8 '
