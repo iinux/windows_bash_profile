@@ -1,0 +1,2 @@
+#!/bin/sh
+start https://md5.gromweb.com/?md5=$1
