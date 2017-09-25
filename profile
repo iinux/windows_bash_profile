@@ -38,6 +38,7 @@ alias pss='utf tasklist '
 alias route='utf route '
 alias runas='winpty runas'
 alias schtasks="utf schtasks "
+alias shutdown='utf shutdown '
 alias tskill='utf tskill '
 alias tasklist="utf tasklist "
 alias taskkill="utf taskkill "
