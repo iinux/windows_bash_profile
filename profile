@@ -46,7 +46,9 @@ alias telnet="winpty telnet "
 alias testnet="ping www.baidu.com -t"
 alias tftp='utf tftp '
 alias tracert='utf tracert '
+alias uptime='net stats srv '
 alias vihosts='vi /c/Windows/System32/drivers/etc/hosts '
+alias vissh='vi ~/.ssh/config '
 
 export PATH=$PATH:/etc/windows_bash_profile/bin
 export HISTTIMEFORMAT="%F %T  "
