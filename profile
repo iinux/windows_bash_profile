@@ -47,6 +47,7 @@ alias testnet="ping www.baidu.com -t"
 alias tftp='utf tftp '
 alias tracert='utf tracert '
 alias uptime='net stats srv '
+alias viewpath='echo $PATH | xargs -d: -n 1 echo | sort'
 alias vihosts='vi /c/Windows/System32/drivers/etc/hosts '
 alias vissh='vi ~/.ssh/config '
 
