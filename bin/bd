@@ -1,0 +1,2 @@
+#!/bin/sh
+start https://www.baidu.com/s?word=$1

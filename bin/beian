@@ -1,0 +1,2 @@
+#!/bin/sh
+start http://www.miitbeian.gov.cn/publish/query/indexFirst.action
