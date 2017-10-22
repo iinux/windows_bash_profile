@@ -41,3 +41,17 @@
 	#dd if=tar.tar.gz |openssl tar -d -k youPassword |tar zxf -
 	openssl des3 -d -salt -k youPassword -in tar.tar.gz | tar xzf -
 ```
+
+
+# bash proxy
+```
+
+		export https_proxy=10.0.0.52:8080
+		export https_proxy=user:pass@192.158.8.8:8080
+		export https_proxy=socks://10.0.0.52:1080
+		export https_proxy=socks4://10.0.0.52:1080
+		export https_proxy=socks5://10.0.0.52:1080
+		export ftp_proxy=socks5://10.0.0.52:1080
+		export no_proxy="*.aiezu.com,10.*.*.*,192.168.*.*,*.local,localhost,127.0.0.1"
+```
+
