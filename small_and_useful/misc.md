@@ -55,3 +55,6 @@
 		export no_proxy="*.aiezu.com,10.*.*.*,192.168.*.*,*.local,localhost,127.0.0.1"
 ```
 
+
+# dig
+`dig txt b.aliyuntest.com @8.8.8.8`
