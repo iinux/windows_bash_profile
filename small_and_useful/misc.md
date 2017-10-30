@@ -58,3 +58,6 @@
 
 # dig
 `dig txt b.aliyuntest.com @8.8.8.8`
+
+# shell beep
+`echo -ne '\007'` or `echo -e "\a"` or `echo -n Ctrl+V Ctrl+G`
