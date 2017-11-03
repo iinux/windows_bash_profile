@@ -1,0 +1,2 @@
+#!/bin/sh
+start https://golang.org/pkg/$1
