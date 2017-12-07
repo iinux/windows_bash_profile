@@ -1,0 +1,2 @@
+#!/bin/sh
+start https://www.sslforfree.com/create?generate&domains=$1
