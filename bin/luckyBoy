@@ -1,0 +1,2 @@
+#!/bin/sh
+[ $[ $RANDOM % 6 ] == 0 ] && echo 'bad' || echo "Lucky boy"
