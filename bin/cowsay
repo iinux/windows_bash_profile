@@ -1,2 +1,2 @@
 #!/bin/sh
-python $0.py "$1"
+python $0.py "$1" | iconv -f gbk -t utf-8
