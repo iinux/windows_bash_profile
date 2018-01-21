@@ -1,0 +1,2 @@
+#!/bin/sh
+cat /d/www/xclip1 | iconv -f utf-8 -t gbk | clip
