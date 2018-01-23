@@ -1,0 +1,9 @@
+paste.exe
+Paste clipboard to command input
+Joel 'Jaykul' Bennett, HuddledMasses.org
+
+Examples:
+    paste | sort
+    paste > readme.txt
+
+http://huddledmasses.org/clipexe-and-the-missing-pasteexe/

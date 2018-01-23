@@ -1,0 +1,9 @@
+clip.exe
+Copy command output to clipboard
+Joel 'Jaykul' Bennett, HuddledMasses.org
+
+Examples:
+    dir | clip
+    clip < readme.txt
+
+http://huddledmasses.org/clipexe-and-the-missing-pasteexe/
