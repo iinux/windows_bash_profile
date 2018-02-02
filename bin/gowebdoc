@@ -1,2 +1,4 @@
 #!/bin/sh
-start https://golang.org/pkg/$1
+#start https://golang.org/pkg/$1
+#start https://golang.google.cn/pkg/$1
+start https://go-zh.org/pkg/$1
