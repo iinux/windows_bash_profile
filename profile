@@ -60,6 +60,7 @@ alias vissh='vi ~/.ssh/config '
 
 export PATH=$PATH:/etc/windows_bash_profile/bin
 export HISTTIMEFORMAT="%F %T  "
+export HISTIGNORE="pwd:ls:ll:"
 
 if [ -f "/etc/windows_bash_profile/local_profile" ]
 then 
