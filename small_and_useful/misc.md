@@ -64,3 +64,8 @@
 
 # gorpc
 `protoc -I server/proto/ server/proto/geo.proto --go_out=plugins=grpc:server/proto`
+
+# headless chrome
+`chrome --headless --disable-gpu --print-to-pdf https://www.baidu.com`
+`chrome --headless --disable-gpu --dump-dom https://www.baidu.com`
+`chrome --headless --disable-gpu --screenshot --window-size=1280,1696 https://www.baidu.com`
