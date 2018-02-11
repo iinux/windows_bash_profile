@@ -69,3 +69,6 @@
 `chrome --headless --disable-gpu --print-to-pdf https://www.baidu.com`
 `chrome --headless --disable-gpu --dump-dom https://www.baidu.com`
 `chrome --headless --disable-gpu --screenshot --window-size=1280,1696 https://www.baidu.com`
+
+# quick ssl
+`go run $GOROOT/src/crypto/tls/generate_cert.go --host m.treevc.net`
