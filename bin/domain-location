@@ -22,8 +22,14 @@ if valid_ip $1; then
 fi
 
 #ip=`/c/Windows/System32/nslookup $1 114.114.114.114 2>&1 | grep Addresses | awk '{print $2}'`
-ips=`/c/Windows/System32/nslookup $1 114.114.114.114 2>&1 | grep -v 114.114.114.114 | grep -A 10 Address  | xargs echo`
-#echo $ips
+nslookup=`/c/Windows/System32/nslookup $1 114.114.114.114 2>&1`
+ips=`echo "$nslookup" | grep -v 114.114.114.114 | grep -A 10 Address | xargs echo`
+
+if [ "$ips" == "" ]; then
+    echo "$nslookup"
+    exit
+fi
+
 for ip in $ips
 do
     if [ "$ip" = "Addresses:" ]; then
