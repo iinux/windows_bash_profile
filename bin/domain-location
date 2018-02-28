@@ -16,6 +16,11 @@ function valid_ip()
     return $stat
 }
 
+if valid_ip $1; then
+    curl -s cip.cc/$1
+    exit
+fi
+
 #ip=`/c/Windows/System32/nslookup $1 114.114.114.114 2>&1 | grep Addresses | awk '{print $2}'`
 ips=`/c/Windows/System32/nslookup $1 114.114.114.114 2>&1 | grep -v 114.114.114.114 | grep -A 10 Address  | xargs echo`
 #echo $ips
