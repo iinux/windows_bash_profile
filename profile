@@ -61,6 +61,12 @@ alias vissh='vi ~/.ssh/config '
 export PATH=$PATH:/etc/windows_bash_profile/bin
 export HISTTIMEFORMAT="%F %T  "
 export HISTIGNORE="pwd:ls:ll:"
+# 设置历史记录条数
+#export HISTFILESIZE=100000
+# 设置显示历史记录条数
+#export HISTSIZE=10000
+
+#shopt -s histappend
 
 if [ -f "/etc/windows_bash_profile/local_profile" ]
 then 
