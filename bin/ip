@@ -1,0 +1,3 @@
+#!/bin/sh
+
+php /etc/windows_bash_profile/bin/17monipdb/run.php $1
