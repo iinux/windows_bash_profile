@@ -21,8 +21,13 @@ if valid_ip $1; then
     exit
 fi
 
-#ip=`/c/Windows/System32/nslookup $1 114.114.114.114 2>&1 | grep Addresses | awk '{print $2}'`
-nslookup=`/c/Windows/System32/nslookup $1 114.114.114.114 2>&1`
+domain=$1
+domain=`echo $domain | sed 's/https\?:\/\///g'`
+domain=`echo $domain | cut -d / -f 1`
+echo $domain
+
+#ip=`/c/Windows/System32/nslookup $domain 114.114.114.114 2>&1 | grep Addresses | awk '{print $2}'`
+nslookup=`/c/Windows/System32/nslookup $domain 114.114.114.114 2>&1`
 ips=`echo "$nslookup" | grep -v 114.114.114.114 | grep -A 10 Address | xargs echo`
 
 if [ "$ips" == "" ]; then
