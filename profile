@@ -51,6 +51,7 @@ alias uptime='net stats srv '
 alias viewpath='echo $PATH | xargs -d: -n 1 echo | sort'
 alias vihosts='vi /c/Windows/System32/drivers/etc/hosts '
 alias vissh='vi ~/.ssh/config '
+alias vigit='vi ~/.gitconfig '
 
 #alias clip1='xclip -o > /home/abui/www/xclip1'
 #alias clip4='python /home/abui/py/clip.py'
