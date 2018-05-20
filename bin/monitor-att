@@ -19,7 +19,7 @@ while [ 1 ]; do
     if [ `date +%H%M` = "0000" ]; then
         utf taskkill -f -im $process_name.exe -t
         start_program
-        sleep $sleep_time
+        sleep 60
         continue
     fi
     cpu=`wmic path Win32_PerfFormattedData_PerfProc_Process get Name,PercentProcessorTime | grep $process_name | awk '{print $2}'`
