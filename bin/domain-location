@@ -26,10 +26,11 @@ domain=`echo $domain | sed 's/https\?:\/\///g'`
 domain=`echo $domain | cut -d / -f 1`
 domain=`echo $domain | cut -d : -f 1`
 echo $domain
+dns_server='114.114.114.114'
 
 #ip=`/c/Windows/System32/nslookup $domain 114.114.114.114 2>&1 | grep Addresses | awk '{print $2}'`
-nslookup=`/c/Windows/System32/nslookup $domain 114.114.114.114 2>&1`
-ips=`echo "$nslookup" | grep -v 114.114.114.114 | grep -A 10 Address | xargs echo`
+nslookup=`/c/Windows/System32/nslookup $domain $dns_server 2>&1`
+ips=`echo "$nslookup" | grep -v $dns_server | grep -A 10 Address | xargs echo`
 
 if [ "$ips" == "" ]; then
     echo "$nslookup"
