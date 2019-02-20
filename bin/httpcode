@@ -1,0 +1,2 @@
+#!/bin/sh
+start https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/$1
