@@ -16,8 +16,14 @@ function valid_ip()
     return $stat
 }
 
-if valid_ip $1; then
+function curl_ip()
+{
     curl -s cip.cc/$1
+    #curl -s http://ip.taobao.com/service/getIpInfo.php?ip=$1
+}
+
+if valid_ip $1; then
+    curl_ip $1
     exit
 fi
 
@@ -26,7 +32,8 @@ domain=`echo $domain | sed 's/https\?:\/\///g'`
 domain=`echo $domain | cut -d / -f 1`
 domain=`echo $domain | cut -d : -f 1`
 echo $domain
-dns_server='114.114.114.114'
+dns_server='223.5.5.5'
+dns_server='123.123.123.123'
 
 #ip=`/c/Windows/System32/nslookup $domain 114.114.114.114 2>&1 | grep Addresses | awk '{print $2}'`
 nslookup=`/c/Windows/System32/nslookup $domain $dns_server 2>&1`
@@ -48,7 +55,7 @@ do
     else
         continue
     fi
-    curl -s cip.cc/$ip
+    curl_ip $ip
     echo "--------------------"
 done
 

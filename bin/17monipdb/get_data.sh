@@ -1,2 +1,2 @@
 #!/bin/sh
-wget http://zhangqun.site/download/17monipdb.dat
+wget http://www.iinux.cn/download/17monipdb.dat
