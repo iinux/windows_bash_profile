@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ "$1" == "e" ]; then
+    vi "$0.tcl"
+    exit
+fi
+
+if [ ! -e $0.tcl ]; then
+	vi "$0.tcl"
+	exit
+fi
+
+tclsh $0.tcl
