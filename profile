@@ -35,7 +35,6 @@ alias nslookup='winpty nslookup '
 alias ping='utf ping '
 alias port='utf netstat -ano | grep '
 alias powercfg='utf powercfg '
-alias pss='utf tasklist '
 alias route='utf route '
 alias runas='winpty runas'
 alias schtasks="utf schtasks "
