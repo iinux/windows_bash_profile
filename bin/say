@@ -1,0 +1,2 @@
+#!/bin/sh
+start https://zh.forvo.com/word/$1
