@@ -19,9 +19,11 @@ func main() {
 	var title = flag.String("t", "hello", "title")
 	var content = flag.String("c", "world", "content")
 	var second = flag.Int("s", 0, "second")
+	var minute = flag.Int("m", 0, "minute")
+	var hour = flag.Int("h", 0, "hour")
 
 	flag.Parse()
-	time.Sleep(time.Duration(*second)*time.Second)
+	time.Sleep(time.Duration(*second)*time.Second+time.Duration(*minute)*time.Minute+time.Duration(*hour)*time.Hour)
 
 	ret, _, _ := proc.Call(0,
 		uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr(*content))),
