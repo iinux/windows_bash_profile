@@ -1,2 +1,3 @@
 #!/bin/sh
-start http://www.miitbeian.gov.cn/publish/query/indexFirst.action
+start http://www.beian.miit.gov.cn/publish/query/indexFirst.action
+# start http://www.miitbeian.gov.cn/publish/query/indexFirst.action
