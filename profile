@@ -72,3 +72,7 @@ if [ -f "/etc/windows_bash_profile/local_profile" ]
 then 
 source /etc/windows_bash_profile/local_profile
 fi
+if [ -f "/etc/windows_bash_profile/zshgit" ]
+then 
+source /etc/windows_bash_profile/zshgit
+fi
