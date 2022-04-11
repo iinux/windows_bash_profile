@@ -65,9 +65,11 @@ export no_proxy="*.aiezu.com,10.*.*.*,192.168.*.*,*.local,localhost,127.0.0.1"
 `protoc -I server/proto/ server/proto/geo.proto --go_out=plugins=grpc:server/proto`
 
 # headless chrome
-`chrome --headless --disable-gpu --print-to-pdf https://www.baidu.com`
-`chrome --headless --disable-gpu --dump-dom https://www.baidu.com`
-`chrome --headless --disable-gpu --screenshot --window-size=1280,1696 https://www.baidu.com`
+```
+chrome --headless --disable-gpu --print-to-pdf https://www.baidu.com
+chrome --headless --disable-gpu --dump-dom https://www.baidu.com
+chrome --headless --disable-gpu --screenshot --window-size=1280,1696 https://www.baidu.com
+```
 
 # quick ssl
 `go run $GOROOT/src/crypto/tls/generate_cert.go --host m.treevc.net`
@@ -79,6 +81,7 @@ nc -4kl 2222 <pipe | nc 127.0.0.1 3000 >pipe
 
 # openssl s_server and s_client
 ```
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
 openssl s_server -quiet -key key.pem -cert cert.pem -port 2333
 sh -i < pipe 2>&1 | openssl s_client -quiet -connect 127.0.0.1:2333 > pipe
 ```
