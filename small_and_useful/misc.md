@@ -85,3 +85,32 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -node
 openssl s_server -quiet -key key.pem -cert cert.pem -port 2333
 sh -i < pipe 2>&1 | openssl s_client -quiet -connect 127.0.0.1:2333 > pipe
 ```
+
+# socat advanced
+```
+# https://payloads.online/tools/socat/
+
+FILENAME=6.6.6.6
+openssl genrsa -out $FILENAME.key 1024
+openssl req -new -key $FILENAME.key -x509 -days 3653 -out $FILENAME.crt
+cat $FILENAME.key $FILENAME.crt >$FILENAME.pem
+
+socat openssl-listen:4433,reuseaddr,cert=$FILENAME.pem,cafile=$FILENAME.crt system:bash,pty,stderr
+socat readline openssl:localhost:4433,cert=$FILENAME.pem,cafile=$FILENAME.crt
+```
+---
+```
+socat open:read.txt\!\!open:write.txt,create,append tcp-listen:80,reuseaddr,fork
+```
+---
+```
+# server
+socat -d -d TCP-LISTEN:11443,reuseaddr TUN:192.168.255.1/24,up
+# client
+socat TCP:1.2.3.4:11443 TUN:192.168.255.2/24,up
+```
+---
+
+| 外部 | socat tcp-listen:1234 tcp-listen:3389 |
+| --- | :--- |
+| 内部 | socat tcp:outerhost:1234 tcp:192.168.12.34:3389 |
